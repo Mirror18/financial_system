@@ -8,6 +8,9 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
 
 import java.util.List;
 
+/**
+ * @author mirror
+ */
 public class TopOnePlugin extends PluginAdapter {
 
     @Override

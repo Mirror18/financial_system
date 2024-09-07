@@ -3,8 +3,10 @@ package com.mirror.common.exception;
 import com.mirror.common.constant.ApiResponseCode;
 import com.mirror.common.dto.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindException;
@@ -15,10 +17,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import javax.validation.Path;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -103,9 +104,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
      * @return 响应数据
      */
     @Override
-    protected ResponseEntity<Object> handleBindException(BindException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleBindException(BindException ex, HttpHeaders headers,
+                                                         HttpStatusCode status, WebRequest request) {
         log.error("BindException:", ex);
         // 返回响应对象
+        return getObjectResponseEntity(ex);
+    }
+
+    @NotNull
+    private ResponseEntity<Object> getObjectResponseEntity(BindException ex) {
         ApiResponse<Object> apiResponse = new ApiResponse<>();
         Map<String, String> errors = new HashMap<>();
         ex.getFieldErrors().forEach(p -> {
@@ -124,16 +131,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
      * @return 响应数据
      */
     @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers,
+                                                                  HttpStatusCode status, WebRequest request) {
         log.error("ParameterException:", ex);
         // 返回响应对象
-        ApiResponse<Object> apiResponse = new ApiResponse<>();
-        Map<String, String> errors = new HashMap<>();
-        ex.getFieldErrors().forEach(p -> {
-            errors.put(p.getField(), p.getDefaultMessage());
-        });
-        apiResponse.error(ApiResponseCode.PARAMETER_INVALID.getCode(), errors);
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+        return getObjectResponseEntity(ex);
     }
 
     /**

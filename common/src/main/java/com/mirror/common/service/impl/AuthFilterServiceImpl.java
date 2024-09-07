@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -20,10 +21,10 @@ import org.springframework.util.AntPathMatcher;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
@@ -32,7 +33,7 @@ import java.util.stream.Collectors;
 @ConditionalOnProperty(prefix = "sys", name = "enable-my-security", havingValue = "true")
 @Component
 @Slf4j
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class AuthFilterServiceImpl<T> implements AuthFilterService<T> {
     final TokenService<T> tokenService;
 
@@ -42,6 +43,20 @@ public class AuthFilterServiceImpl<T> implements AuthFilterService<T> {
     final HandlerExceptionResolver handlerExceptionResolver;
     final RedisTemplate<String, Object> redisTemplate;
 
+    @Autowired
+    public AuthFilterServiceImpl(TokenService<T> tokenService,
+                                 AntPathMatcher antPathMatcher,
+                                 SecurityConfig securityConfig,
+                                 ObjectMapper jsonMapper,
+                                 @Qualifier("handlerExceptionResolver") HandlerExceptionResolver handlerExceptionResolver,
+                                 RedisTemplate<String, Object> redisTemplate) {
+        this.tokenService = tokenService;
+        this.antPathMatcher = antPathMatcher;
+        this.securityConfig = securityConfig;
+        this.jsonMapper = jsonMapper;
+        this.handlerExceptionResolver = handlerExceptionResolver;
+        this.redisTemplate = redisTemplate;
+    }
     @Override
     public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {

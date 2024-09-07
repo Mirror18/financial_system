@@ -43,11 +43,12 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher #使用 Ant 风格的路径模式来配置 URL 路径匹配策略
-
+#  main:
+#    allow-bean-definition-overriding: true
 # Mybatis
 mybatis:
   mapper-locations: classpath*:**/*Mapper.xml
-  type-aliases-package: com.bage
+  type-aliases-package: com.mirror
   configuration:
     map-underscore-to-camel-case: true
     default-statement-timeout: 15
@@ -55,8 +56,8 @@ mybatis:
 # Swagger
 swagger:
   enable: true
-  name: BAGE-FINANCE-ADMIN-API
-  description: BAGE-FINANCE-ADMIN-API 接口文档
+  name: FINANCE-ADMIN-API
+  description: FINANCE-ADMIN-API 接口文档
   version: 0.0.1
 
 # Swagger UI
@@ -71,6 +72,8 @@ knife4j:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 
+#  level:
+#    org.springframework: DEBUG
 security:
   # 开启安全校验
   enable: true
