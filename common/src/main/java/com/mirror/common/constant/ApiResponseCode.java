@@ -1,9 +1,14 @@
 package com.mirror.common.constant;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * @author mirror
  */
 
+@Getter
+@AllArgsConstructor
 public enum ApiResponseCode {
 
     /**
@@ -46,17 +51,9 @@ public enum ApiResponseCode {
 
     private String message;
 
-    private ApiResponseCode(Integer code, String message) {
-        this.code = code;
-        this.message = message;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
+//    private ApiResponseCode(Integer code, String message) {
+//        this.code = code;
+//        this.message = message;
+//    }
 
 }

@@ -208,5 +208,45 @@ what
 
 现在要做的是，先书写统一格式，用于后续模块开发时候，可以只需要编写对应功能即可。
 
+![image-20240907171306171](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409071713254.png)
 
+就是先编写这些，那干了什么，就是补充了几个配置json,swagger的配置，注册进springboot中。还有两个关于security的环境配置注入。因为这些都是第三方包，需要注册到spring中，所以需要配置类
+
+![image-20240907182056180](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409071820218.png)
+
+定义了两个常量，也就是枚举类。
+
+![image-20240907182129321](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409071821353.png)
+
+定义了四个dto也就是层间传递格式。
+
+![image-20240907182148410](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409071821443.png)
+
+定义了五个全局异常，用于抛出的异常的格式化。
+
+![image-20240907182206825](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409071822851.png)
+
+然后定义了两个工具包，属于工具类。常见的时间格式。然后生成随机数字什么的。
+
+![image-20240907182218538](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409071822564.png)
+
+
+
+最后想了想，还是把两个服务类给装配上，因为需要给应用加上拦截。还有就是生成token的服务。
+
+![image-20240907182627772](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409071826796.png)
+
+
+
+或许看出来这还少很多的东西，配置没有全面，还有一些服务没有提供。但这些都可以随着后面编写
+
+### 编写mybatis模块
+
+或者说也不叫mybatis的generator的编写。然后就有个疑问，为什么不用mybatis-plus呢。我觉得其他的再怎么不咋地，也比这种写的强啊。
+
+具体也不好说啥，因为这玩意儿也就是需要的时候看两眼。毕竟东西太多。
+
+![image-20240907183629529](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409071836564.png)
+
+最后是这样的。
 
