@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: bage-xxl-job-local
+-- Host: 127.0.0.1    Database: mirror-xxl-job-local
 -- ------------------------------------------------------
 -- Server version	8.0.22
 
@@ -39,7 +39,7 @@ CREATE TABLE `xxl_job_group` (
 
 LOCK TABLES `xxl_job_group` WRITE;
 /*!40000 ALTER TABLE `xxl_job_group` DISABLE KEYS */;
-INSERT INTO `xxl_job_group` VALUES (1,'xxl-job-executor-sample','示例执行器',0,NULL,'2024-04-21 14:15:38'),(2,'bage-finance-admin-api','财务系统',0,NULL,'2024-04-21 14:15:38');
+INSERT INTO `xxl_job_group` VALUES (1,'xxl-job-executor-sample','示例执行器',0,NULL,'2024-04-21 14:15:38'),(2,'mirror-finance-admin-api','财务系统',0,NULL,'2024-04-21 14:15:38');
 /*!40000 ALTER TABLE `xxl_job_group` ENABLE KEYS */;
 UNLOCK TABLES;
 

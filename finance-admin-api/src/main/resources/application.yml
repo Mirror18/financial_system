@@ -43,6 +43,13 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher #使用 Ant 风格的路径模式来配置 URL 路径匹配策略
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    password: "000415" # 如果需要密码认证，确保与 IDEA 中配置一致
+#    database: 10
+
+
 #  main:
 #    allow-bean-definition-overriding: true
 # Mybatis

@@ -23,7 +23,7 @@ public class MapperPlugin extends PluginAdapter {
         FullyQualifiedJavaType serializable = new FullyQualifiedJavaType("org.apache.ibatis.annotations.Mapper");
         interfaze.addImportedType(serializable);
 
-        FullyQualifiedJavaType commonMapperType = new FullyQualifiedJavaType("com.bage.mybatis.help.CommonMapper");
+        FullyQualifiedJavaType commonMapperType = new FullyQualifiedJavaType("com.mirror.mybatis.help.CommonMapper");
         interfaze.addImportedType(commonMapperType);
 
         commonMapperType.addTypeArgument(new FullyQualifiedJavaType(introspectedTable.getBaseRecordType()));
