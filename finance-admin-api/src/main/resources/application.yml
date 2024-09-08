@@ -1,7 +1,7 @@
 # server
 server:
   # port
-  port: 8080
+  port: 8091
   #  servlet:
   #    # context path
   #    context-path: /mysass-finance-admin-api

@@ -284,5 +284,54 @@ what
 
 ### 登陆模块
 
-首先要解决的是编写游客接口。
+根据编写API接口的方式，我们一共要编写，controller模块，service模块，map模块
 
+那么就先从controller开始
+
+#### controller
+
+![image-20240908090943860](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409080909047.png)
+
+在这里编写。通过看具体内容，首先是分析类上的加载头，都是一样的
+
+。
+
+| 注解                    | 功能                                                     |
+| ----------------------- | -------------------------------------------------------- |
+| @RestController         | 注册进spring boot应用中，归应用管理                      |
+| @RequestMapping         | 对value值设置，拦截请求路径，访问路径为域名+端口号/login |
+| @RequireArgsConstructor | 对标有final 符号的进行生成构造器                         |
+| @Slf4j                  | 这个就是配合log来输出控制台字符的                        |
+| @GetMapping             | 获取到一个get请求。在方法上，所以路径为login/...         |
+
+以上就是controller的编写。
+
+查看具体内容，是导入了一个server接口，然后直接调用的方法。
+
+所以继续向下走
+
+#### service
+
+![image-20240908100247662](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409081003462.png)
+
+在这里。
+
+![image-20240908100358124](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409081003180.png)
+
+这里只写了接口，那么去看实现类
+
+![image-20240908100443452](https://cdn.jsdelivr.net/gh/Mirror18/imgage@main//202409081004502.png)
+
+这里就只多了@Service注解，用于管理。
+
+然后下面是具体方法。
+
+具体的方法编写就不用多看，都是与数据库的操作，有些是与redistribution操作，有些是跟MySQL操作。
+
+redis的操作就是按照模板来，
+
+
+
+其他的就是跟着代码看就完事了，因为就是返回的东西统一，这样就牵扯到dto什么之类的。还有返回统一的格式。
+
+然后基本上所有模块都是这么的一个流程。不用多说。

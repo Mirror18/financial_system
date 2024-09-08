@@ -11,7 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-//@Api(tags = "用户登录模块")
+/**
+ * @author mirror
+ */ //@Api(tags = "用户登录模块")
 @RestController
 @RequestMapping(value = "/login")
 @RequiredArgsConstructor
