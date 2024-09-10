@@ -33,6 +33,9 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author mirror
+ */
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -63,6 +66,7 @@ public class MemberLoginServiceImpl implements MemberLoginService {
      */
     @Override
     public String getBase64Code(GetBase64CodeForm form) {
+        //设置三方信息
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(300, 192, 5, 1000);
         String code = lineCaptcha.getCode();
         // 将图形验证码写到redis缓存中

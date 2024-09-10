@@ -6,6 +6,9 @@ import com.mirror.finance.biz.dto.form.GetSmsCodeForm;
 import com.mirror.finance.biz.dto.form.PhonePasswordLoginForm;
 import com.mirror.finance.biz.dto.form.PhoneSmsCodeLoginForm;
 
+/**
+ * @author mirror
+ */
 public interface MemberLoginService {
     /**
      * 获取客户端id
