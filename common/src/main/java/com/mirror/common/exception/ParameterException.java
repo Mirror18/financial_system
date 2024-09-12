@@ -1,7 +1,9 @@
 package com.mirror.common.exception;
 
 import com.mirror.common.constant.ApiResponseCode;
+import lombok.Getter;
 
+import java.io.Serial;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,8 +11,10 @@ import java.util.Map;
  * 参数异常
  * @author mirror
  */
+@Getter
 public class ParameterException extends BaseException {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private Map<String, String> fieldErrors;
@@ -33,10 +37,6 @@ public class ParameterException extends BaseException {
         Map<String, String> fieldErrors = new HashMap<>();
         fieldErrors.put(key, value);
         this.fieldErrors = fieldErrors;
-    }
-
-    public Map<String, String> getFieldErrors() {
-        return fieldErrors;
     }
 
     public ParameterException(String message, Throwable t) {

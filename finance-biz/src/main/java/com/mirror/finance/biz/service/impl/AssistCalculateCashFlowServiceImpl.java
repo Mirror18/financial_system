@@ -23,6 +23,9 @@ import java.util.List;
 
 import static com.mirror.finance.biz.domain.AssistCalculateCashFlowField.*;
 
+/**
+ * @author mirror
+ */
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -103,8 +106,7 @@ public class AssistCalculateCashFlowServiceImpl implements AssistCalculateHandle
     @Override
     public GetAssistCalculateCashFlowVo get(long id) {
         AssistCalculateCashFlow assistCalculateCashFlow = getById(id);
-        GetAssistCalculateCashFlowVo result = objectConvertor.toGetAssistCalculateCashFlowVo(assistCalculateCashFlow);
-        return result;
+        return objectConvertor.toGetAssistCalculateCashFlowVo(assistCalculateCashFlow);
     }
 
     /**

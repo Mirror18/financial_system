@@ -1,13 +1,17 @@
 package com.mirror.common.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.netty.http.client.HttpClient;
 
-//@ConditionalOnProperty(prefix = "sys",name = "rest-template-config",havingValue = "true")
+/**
+ * @author mirror
+ */
+@ConditionalOnProperty(prefix = "sys",name = "rest-template-config",havingValue = "true")
 @Configuration
 @Slf4j
 public class WebClientDefaultConfig {

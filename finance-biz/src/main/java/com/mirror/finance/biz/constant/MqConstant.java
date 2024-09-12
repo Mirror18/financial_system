@@ -1,5 +1,8 @@
 package com.mirror.finance.biz.constant;
 
+/**
+ * @author mirror
+ */
 public class MqConstant {
     /**
      * 凭证

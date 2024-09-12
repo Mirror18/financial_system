@@ -26,9 +26,11 @@ import java.util.TimeZone;
 @ConditionalOnProperty(prefix = "sys",name = "json-config",havingValue = "true")
 @Configuration
 @Slf4j
-public class JsonDefaultConfig {
+public class JsonConfig {
+    //注入了bean。注意与这个类名不同的在于，下方是方法，不是构造器，这个类是多余的
+    //可以放到统一的config中，不过也从此得知configuration只是表明是配置，不参与单例实例化，这个类名叫什么都无所谓
     @Bean
-    public ObjectMapper JsonDefaultConfig() {
+    public ObjectMapper jsonDefaultConfig() {
         log.info("JsonConfig init start ...");
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);

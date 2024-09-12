@@ -17,13 +17,17 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author mirror
+ */
 @Configuration
-@ConfigurationProperties(prefix = "elasticsearch")
+//@ConfigurationProperties(prefix = "elasticsearch")
 @ConditionalOnProperty("elasticsearch.host")
+//调用日志
 @Slf4j
 @RequiredArgsConstructor
 public class ElasticsearchConfig {
-
+    //这里就是用@value注入
     @Value("${elasticsearch.host}")
     private String host;
 
@@ -35,9 +39,9 @@ public class ElasticsearchConfig {
 
     @Value("${elasticsearch.apiKey:}")
     private String apiKey;
-
+    //创建一个map
     final ObjectMapper objectMapper;
-
+    //注入bean
     @Bean
     public ElasticsearchClient elasticsearchClient() {
         log.info(">>>>>>>>>>> ElasticsearchClient config init.");

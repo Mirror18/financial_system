@@ -1,5 +1,8 @@
 package com.mirror.finance.biz.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -7,6 +10,8 @@ import java.util.Date;
  *
  * @author mirror
  */
+@Setter
+@Getter
 public class DataDictionary {
     /**
      * 
@@ -47,70 +52,6 @@ public class DataDictionary {
      * 修改时间
      */
     private Date updateTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDataCodeCate() {
-        return dataCodeCate;
-    }
-
-    public void setDataCodeCate(String dataCodeCate) {
-        this.dataCodeCate = dataCodeCate;
-    }
-
-    public String getDataCode() {
-        return dataCode;
-    }
-
-    public void setDataCode(String dataCode) {
-        this.dataCode = dataCode;
-    }
-
-    public String getDataValue() {
-        return dataValue;
-    }
-
-    public void setDataValue(String dataValue) {
-        this.dataValue = dataValue;
-    }
-
-    public Integer getDataSort() {
-        return dataSort;
-    }
-
-    public void setDataSort(Integer dataSort) {
-        this.dataSort = dataSort;
-    }
-
-    public Boolean getDisable() {
-        return disable;
-    }
-
-    public void setDisable(Boolean disable) {
-        this.disable = disable;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
 
     public void initDefault() {
         if (this.getDataCodeCate() == null) {

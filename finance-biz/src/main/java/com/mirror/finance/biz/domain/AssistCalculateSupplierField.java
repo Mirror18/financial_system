@@ -4,7 +4,11 @@ import com.mirror.mybatis.help.DbField;
 import com.mirror.mybatis.help.FieldResult;
 import java.util.Collections;
 
+/**
+ * @author mirror
+ */
 public class AssistCalculateSupplierField {
+
     public static DbField Id = new DbField("id","id","BIGINT","java.lang.Long");
 
     public static DbField SupplierCate = new DbField("supplier_cate","supplierCate","VARCHAR","java.lang.String");

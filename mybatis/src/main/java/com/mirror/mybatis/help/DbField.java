@@ -1,5 +1,10 @@
 package com.mirror.mybatis.help;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class DbField {
     /**
      * 数据库名称
@@ -25,35 +30,4 @@ public class DbField {
         this.javaType = javaType;
     }
 
-    public String getDbName() {
-        return dbName;
-    }
-
-    public void setDbName(String dbName) {
-        this.dbName = dbName;
-    }
-
-    public String getPropertyName() {
-        return propertyName;
-    }
-
-    public void setPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-    }
-
-    public String getJdbcType() {
-        return jdbcType;
-    }
-
-    public void setJdbcType(String jdbcType) {
-        this.jdbcType = jdbcType;
-    }
-
-    public String getJavaType() {
-        return javaType;
-    }
-
-    public void setJavaType(String javaType) {
-        this.javaType = javaType;
-    }
 }

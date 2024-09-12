@@ -1,5 +1,8 @@
 package com.mirror.finance.biz.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -7,6 +10,8 @@ import java.util.Date;
  *
  * @author mirror
  */
+@Setter
+@Getter
 public class AssistCalculateSupplier {
     /**
      * 
@@ -92,142 +97,6 @@ public class AssistCalculateSupplier {
      * 辅助核算id
      */
     private Long assistCalculateSummaryId;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getSupplierCate() {
-        return supplierCate;
-    }
-
-    public void setSupplierCate(String supplierCate) {
-        this.supplierCate = supplierCate;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getContacts() {
-        return contacts;
-    }
-
-    public void setContacts(String contacts) {
-        this.contacts = contacts;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public Boolean getDisable() {
-        return disable;
-    }
-
-    public void setDisable(Boolean disable) {
-        this.disable = disable;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Long getUpdateMemberId() {
-        return updateMemberId;
-    }
-
-    public void setUpdateMemberId(Long updateMemberId) {
-        this.updateMemberId = updateMemberId;
-    }
-
-    public Boolean getDelFlag() {
-        return delFlag;
-    }
-
-    public void setDelFlag(Boolean delFlag) {
-        this.delFlag = delFlag;
-    }
-
-    public Long getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(Long tenantId) {
-        this.tenantId = tenantId;
-    }
-
-    public String getUnifiedSocialCreditCode() {
-        return unifiedSocialCreditCode;
-    }
-
-    public void setUnifiedSocialCreditCode(String unifiedSocialCreditCode) {
-        this.unifiedSocialCreditCode = unifiedSocialCreditCode;
-    }
-
-    public String getProvinceCode() {
-        return provinceCode;
-    }
-
-    public void setProvinceCode(String provinceCode) {
-        this.provinceCode = provinceCode;
-    }
-
-    public String getCityCode() {
-        return cityCode;
-    }
-
-    public void setCityCode(String cityCode) {
-        this.cityCode = cityCode;
-    }
-
-    public String getCountyCode() {
-        return countyCode;
-    }
-
-    public void setCountyCode(String countyCode) {
-        this.countyCode = countyCode;
-    }
-
-    public Long getAssistCalculateSummaryId() {
-        return assistCalculateSummaryId;
-    }
-
-    public void setAssistCalculateSummaryId(Long assistCalculateSummaryId) {
-        this.assistCalculateSummaryId = assistCalculateSummaryId;
-    }
 
     public void initDefault() {
         if (this.getSupplierCate() == null) {

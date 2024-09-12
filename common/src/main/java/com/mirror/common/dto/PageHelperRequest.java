@@ -5,6 +5,8 @@ import lombok.Data;
 
  import jakarta.validation.constraints.Min;
  import jakarta.validation.constraints.NotNull;
+
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -13,6 +15,7 @@ import java.io.Serializable;
 //@Schema
 @Data
 public class PageHelperRequest implements Serializable {
+    @Serial
     private static final long serialVersionUID = -1604684240674386686L;
 //    @Schema(name = "pageNum", description = "当前页, 默认1")
     @NotNull(message = "当前页不能为空")

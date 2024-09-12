@@ -8,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 
 /**
  * 账套（表：account_book）
+ * @author mirror
  */
 @Data
 public class AccountBookDisableForm {

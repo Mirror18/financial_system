@@ -13,9 +13,15 @@ import org.mapstruct.Mappings;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
+/**
+ * 这是什么，这是mapStruct。在这里写对应关系，
+ * 编译的时候自动生成实现类
+ * @author mirror
+ */
 public interface ObjectConvertor {
+    //将entry转换成dto
     GenerateMpRegCodeVo toGenerateMpRegCodeResponse(MpQrCodeCreateResult source);
-
+    //这里是因为名字不同，所以有这个注解
     @Mappings({@Mapping(target = "avatar", source = "avatarUrl")})
     CurrentInfoVo toCurrentInfoVo(Member source);
 
@@ -47,7 +53,7 @@ public interface ObjectConvertor {
     List<MenuDataItemVo> toMenuDataItemVo(List<SysMenu> source);
 
     GetAccountBookVo toGetAccountBookVo(AccountBook source);
-
+    //设置为新值，用的Java表达式
     @Mappings({
             @Mapping(target = "valueAddedTaxCate", expression = "java(com.mirror.finance.biz.enums.ValueAddedTaxCateEnum.getMessage(source.getValueAddedTaxCate()))"),
             @Mapping(target = "accountingStandard", expression = "java(com.mirror.finance.biz.enums.AccountingStandardEnum.getMessage(source.getAccountingStandard()))")

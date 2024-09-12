@@ -1,8 +1,11 @@
 package com.mirror.finance.biz.enums;
 
+import lombok.Getter;
+
 /**
  * 会计准则
  */
+@Getter
 public enum AccountingStandardEnum {
     XQY((byte) 0, "小企业会计准则"),
     QY((byte) 1, "企业会计准则"),
@@ -12,16 +15,8 @@ public enum AccountingStandardEnum {
     private String message;
     private Byte code;
 
-    public String getMessage() {
-        return message;
-    }
-
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public Byte getCode() {
-        return code;
     }
 
     public void setCode(Byte code) {

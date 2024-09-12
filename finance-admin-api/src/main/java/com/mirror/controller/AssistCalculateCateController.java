@@ -20,7 +20,9 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
-//@Api(tags = "辅助核算类别管理")
+/**
+ * @author mirror
+ */ //@Api(tags = "辅助核算类别管理")
 @RestController
 @RequestMapping(value = "/assistCalculateCate")
 @RequiredArgsConstructor

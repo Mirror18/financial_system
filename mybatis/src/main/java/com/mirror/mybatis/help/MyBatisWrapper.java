@@ -1,10 +1,14 @@
 package com.mirror.mybatis.help;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 
+@Setter
+@Getter
 public class MyBatisWrapper<T> {
     public MyBatisWrapper() {
         this.oredCriteria = new ArrayList<>();
@@ -46,7 +50,7 @@ public class MyBatisWrapper<T> {
             selectBuilder = new StringBuilder();
         }
         for (DbField field : fields) {
-            if (selectBuilder.length() > 0) {
+            if (!selectBuilder.isEmpty()) {
                 selectBuilder.append(",");
             }
             selectBuilder.append(field.getDbName());
@@ -333,10 +337,6 @@ public class MyBatisWrapper<T> {
         return this;
     }
 
-    public List<Criteria<T>> getOredCriteria() {
-        return oredCriteria;
-    }
-
     public void or(Criteria<T> criteria) {
         criteria.setAndOrOr(false);
         oredCriteria.add(criteria);
@@ -386,98 +386,6 @@ public class MyBatisWrapper<T> {
         if (!CollectionUtils.isEmpty(oredCriteria)) {
             oredCriteria.clear();
         }
-    }
-
-    public StringBuilder getSelectBuilder() {
-        return selectBuilder;
-    }
-
-    public void setSelectBuilder(StringBuilder selectBuilder) {
-        this.selectBuilder = selectBuilder;
-    }
-
-    public StringBuilder getWhereBuilder() {
-        return whereBuilder;
-    }
-
-    public void setWhereBuilder(StringBuilder whereBuilder) {
-        this.whereBuilder = whereBuilder;
-    }
-
-    public StringBuilder getUpdateSql() {
-        return updateSql;
-    }
-
-    public void setUpdateSql(StringBuilder updateSql) {
-        this.updateSql = updateSql;
-    }
-
-    public StringBuilder getOrderByClause() {
-        return orderByClause;
-    }
-
-    public void setOrderByClause(StringBuilder orderByClause) {
-        this.orderByClause = orderByClause;
-    }
-
-    public StringBuilder getGroupBySql() {
-        return groupBySql;
-    }
-
-    public void setGroupBySql(StringBuilder groupBySql) {
-        this.groupBySql = groupBySql;
-    }
-
-    public Integer getRows() {
-        return rows;
-    }
-
-    public void setRows(Integer rows) {
-        this.rows = rows;
-    }
-
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public Map<String, Object> getUpdateRow() {
-        return updateRow;
-    }
-
-    public void setUpdateRow(Map<String, Object> updateRow) {
-        this.updateRow = updateRow;
-    }
-
-    public void setOredCriteria(List<Criteria<T>> oredCriteria) {
-        this.oredCriteria = oredCriteria;
-    }
-
-    public Boolean getCountFlag() {
-        return countFlag;
-    }
-
-    public void setCountFlag(Boolean countFlag) {
-        this.countFlag = countFlag;
-    }
-
-    public Integer getPageIndex() {
-        return pageIndex;
-    }
-
-    public void setPageIndex(Integer pageIndex) {
-        this.pageIndex = pageIndex;
-    }
-
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
     }
 
     /**

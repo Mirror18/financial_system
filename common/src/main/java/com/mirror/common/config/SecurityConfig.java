@@ -9,10 +9,9 @@ import java.util.List;
 /**
  * @author mirror
  */
+//内置bean
 @Component
-@ConfigurationProperties(
-        prefix = "security"
-)
+@ConfigurationProperties(prefix = "security")
 @Data
 public class SecurityConfig {
     /**

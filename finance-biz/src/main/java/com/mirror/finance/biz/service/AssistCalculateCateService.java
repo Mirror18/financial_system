@@ -11,6 +11,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author mirror
+ */
 public interface AssistCalculateCateService {
     /**
      * 添加辅助核算类别

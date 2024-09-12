@@ -1,5 +1,8 @@
 package com.mirror.finance.biz.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -7,6 +10,8 @@ import java.util.Date;
  *
  * @author mirror
  */
+@Setter
+@Getter
 public class AssistCalculateSummary {
     /**
      * 
@@ -82,126 +87,6 @@ public class AssistCalculateSummary {
      * 使用计数
      */
     private Integer useCount;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Boolean getDisable() {
-        return disable;
-    }
-
-    public void setDisable(Boolean disable) {
-        this.disable = disable;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Long getUpdateMemberId() {
-        return updateMemberId;
-    }
-
-    public void setUpdateMemberId(Long updateMemberId) {
-        this.updateMemberId = updateMemberId;
-    }
-
-    public Boolean getDelFlag() {
-        return delFlag;
-    }
-
-    public void setDelFlag(Boolean delFlag) {
-        this.delFlag = delFlag;
-    }
-
-    public String getMnemonicCode() {
-        return mnemonicCode;
-    }
-
-    public void setMnemonicCode(String mnemonicCode) {
-        this.mnemonicCode = mnemonicCode;
-    }
-
-    public Long getAssistCalculateCateId() {
-        return assistCalculateCateId;
-    }
-
-    public void setAssistCalculateCateId(Long assistCalculateCateId) {
-        this.assistCalculateCateId = assistCalculateCateId;
-    }
-
-    public Long getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(Long tenantId) {
-        this.tenantId = tenantId;
-    }
-
-    public String getAssistCalculateCateCode() {
-        return assistCalculateCateCode;
-    }
-
-    public void setAssistCalculateCateCode(String assistCalculateCateCode) {
-        this.assistCalculateCateCode = assistCalculateCateCode;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
-    public Integer getUseCount() {
-        return useCount;
-    }
-
-    public void setUseCount(Integer useCount) {
-        this.useCount = useCount;
-    }
 
     public void initDefault() {
         if (this.getName() == null) {

@@ -2,21 +2,22 @@ package com.mirror.common.exception;
 
 import com.mirror.common.constant.ApiResponseCode;
 import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
 
 /**
  * 处理异常
  *
  * @author mirror
  */
+@Setter
 @Getter
 public class BaseException extends RuntimeException {
 
+    @Serial
     private static final long serialVersionUID = 2612992235262400823L;
     private Integer code = null;
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
 
 
     public BaseException(String message) {

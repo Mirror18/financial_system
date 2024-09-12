@@ -1,9 +1,12 @@
 package com.mirror.mybatis.help;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Getter
 public abstract class GeneratedCriteria<T> {
     protected List<Criterion> criteria;
 
@@ -13,14 +16,10 @@ public abstract class GeneratedCriteria<T> {
     }
 
     public boolean isValid() {
-        return criteria.size() > 0;
+        return !criteria.isEmpty();
     }
 
     public List<Criterion> getAllCriteria() {
-        return criteria;
-    }
-
-    public List<Criterion> getCriteria() {
         return criteria;
     }
 

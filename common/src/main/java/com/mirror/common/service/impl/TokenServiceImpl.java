@@ -22,6 +22,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @RequiredArgsConstructor
 public class TokenServiceImpl<T extends BaseUserInfoDTO> implements TokenService<T> {
+    //thread local,用于保存上下文信息
     ThreadLocal<T> userThreadLocal;
     final RedisTemplate<String, T> redisTemplate;
     final SecurityConfig securityConfig;
@@ -181,7 +182,7 @@ public class TokenServiceImpl<T extends BaseUserInfoDTO> implements TokenService
 
     /**
      * 清除token
-     *
+     *就是将redis中的缓存个去掉
      * @return
      */
     @Override

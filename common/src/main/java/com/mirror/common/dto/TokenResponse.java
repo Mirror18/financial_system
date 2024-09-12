@@ -2,6 +2,7 @@ package com.mirror.common.dto;
 
 import lombok.Data;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Data
 public class TokenResponse implements Serializable {
+    @Serial
     private static final long serialVersionUID = 4786068357968425656L;
     /**
      * token 登录凭证

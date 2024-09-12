@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 /**
  * xxl-job config
  *
+ * @author mirror
  */
 @Component
 @ConfigurationProperties(prefix = "xxl.job")

@@ -1,6 +1,7 @@
 package com.mirror.common.constant;
 
 /**
+ * 这两种就做个验证,常量的定义方法
  * @author mirror
  */
 public class CommonConstant {

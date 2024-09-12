@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 格式返回类型
  * @author mirror
  */
 @Data

@@ -1,5 +1,8 @@
 package com.mirror.finance.biz.constant;
 
+/**
+ * @author mirror
+ */
 public class TenantSysConfigKeyConstant {
     /**
      * 科目编码长度配置

@@ -20,6 +20,9 @@ import org.springframework.stereotype.Service;
 
 import static com.mirror.finance.biz.domain.AccountBookField.*;
 
+/**
+ * @author mirror
+ */
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -36,14 +39,19 @@ public class AccountBookServiceImpl implements AccountBookService {
      */
     @Override
     public GetAccountBookVo get(long id) {
+        //这里相当于自己书写语法放置到包裹类中
         MyBatisWrapper<AccountBook> myBatisWrapper = new MyBatisWrapper<>();
+        //生成查询sql字段
         myBatisWrapper.select(Id, CompanyName, UnifiedSocialCreditCode, IndustryId, ValueAddedTaxCate, EnableVoucherVerify,
                 StartTime, AccountingStandard, EnableFixedAssets, EnableCapital, EnablePsi);
+        //添加过滤语句
         myBatisWrapper.whereBuilder()
                 .andEq(Id, id)
                 .andEq(DelFlag, false)
                 .andEq(TenantId, tokenService.getThreadLocalTenantId());
+        //这里才调入执行
         AccountBook accountBook = accountBookMapper.get(myBatisWrapper);
+        //将数据库查询到的内容转换为响应所用的bean
         return objectConvertor.toGetAccountBookVo(accountBook);
     }
 
@@ -59,7 +67,7 @@ public class AccountBookServiceImpl implements AccountBookService {
         myBatisWrapper.select(Id, CompanyName, ValueAddedTaxCate, AccountingStandard, CreateTime, StartTime,
                 EnableVoucherVerify, Disable)
                 .page(request.getPageNum(), request.getPageSize());
-        Criteria where = myBatisWrapper.whereBuilder().andEq(setDelFlag(false));
+        Criteria<AccountBook> where = myBatisWrapper.whereBuilder().andEq(setDelFlag(false));
         if (Strings.isNotBlank(request.getCompanyName())) {
             where.andLike(setCompanyName("%" + request.getCompanyName() + "%"));
         }

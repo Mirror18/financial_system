@@ -1,5 +1,13 @@
 package com.mirror.mybatis.help;
 
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * @author mirror
+ */
+@Setter
+@Getter
 public class Criteria<T> extends GeneratedCriteria<T> {
     //true 表示and false表示or
     private boolean andOrOr = true;
@@ -8,11 +16,4 @@ public class Criteria<T> extends GeneratedCriteria<T> {
         super();
     }
 
-    public boolean isAndOrOr() {
-        return andOrOr;
-    }
-
-    public void setAndOrOr(boolean andOrOr) {
-        this.andOrOr = andOrOr;
-    }
 }

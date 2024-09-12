@@ -4,6 +4,9 @@ import com.mirror.mybatis.help.DbField;
 import com.mirror.mybatis.help.FieldResult;
 import java.util.Collections;
 
+/**
+ * @author mirror
+ */
 public class AssistCalculateInventoryField {
     public static DbField Id = new DbField("id","id","BIGINT","java.lang.Long");
 

@@ -2,12 +2,15 @@ package com.mirror.common.exception;
 
 import com.mirror.common.constant.ApiResponseCode;
 
+import java.io.Serial;
+
 /**
  * 业务处理异常
  * @author mirror
  */
 public class BizException extends BaseException {
 
+    @Serial
     private static final long serialVersionUID = 628904681759624791L;
 
     public BizException(String message) {

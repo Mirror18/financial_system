@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * @author mirror
+ */
 @Data
 public class SmsTemplateDTO {
     /**

@@ -4,6 +4,9 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+/**
+ * @author mirror
+ */
 public interface CommonMapper<T> {
     /**
      * 通过id删除数据

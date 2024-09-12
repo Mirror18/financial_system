@@ -1,5 +1,8 @@
 package com.mirror.finance.biz.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -7,6 +10,8 @@ import java.util.Date;
  *
  * @author mirror
  */
+@Setter
+@Getter
 public class AccountBook {
     /**
      * 
@@ -97,150 +102,6 @@ public class AccountBook {
      * 租户id
      */
     private Long tenantId;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public String getUnifiedSocialCreditCode() {
-        return unifiedSocialCreditCode;
-    }
-
-    public void setUnifiedSocialCreditCode(String unifiedSocialCreditCode) {
-        this.unifiedSocialCreditCode = unifiedSocialCreditCode;
-    }
-
-    public Integer getIndustryId() {
-        return industryId;
-    }
-
-    public void setIndustryId(Integer industryId) {
-        this.industryId = industryId;
-    }
-
-    public Byte getValueAddedTaxCate() {
-        return valueAddedTaxCate;
-    }
-
-    public void setValueAddedTaxCate(Byte valueAddedTaxCate) {
-        this.valueAddedTaxCate = valueAddedTaxCate;
-    }
-
-    public Boolean getEnableVoucherVerify() {
-        return enableVoucherVerify;
-    }
-
-    public void setEnableVoucherVerify(Boolean enableVoucherVerify) {
-        this.enableVoucherVerify = enableVoucherVerify;
-    }
-
-    public Date getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Byte getAccountingStandard() {
-        return accountingStandard;
-    }
-
-    public void setAccountingStandard(Byte accountingStandard) {
-        this.accountingStandard = accountingStandard;
-    }
-
-    public Boolean getEnableFixedAssets() {
-        return enableFixedAssets;
-    }
-
-    public void setEnableFixedAssets(Boolean enableFixedAssets) {
-        this.enableFixedAssets = enableFixedAssets;
-    }
-
-    public Boolean getEnableCapital() {
-        return enableCapital;
-    }
-
-    public void setEnableCapital(Boolean enableCapital) {
-        this.enableCapital = enableCapital;
-    }
-
-    public Boolean getEnablePsi() {
-        return enablePsi;
-    }
-
-    public void setEnablePsi(Boolean enablePsi) {
-        this.enablePsi = enablePsi;
-    }
-
-    public Boolean getDisable() {
-        return disable;
-    }
-
-    public void setDisable(Boolean disable) {
-        this.disable = disable;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Long getUpdateMemberId() {
-        return updateMemberId;
-    }
-
-    public void setUpdateMemberId(Long updateMemberId) {
-        this.updateMemberId = updateMemberId;
-    }
-
-    public Boolean getDelFlag() {
-        return delFlag;
-    }
-
-    public void setDelFlag(Boolean delFlag) {
-        this.delFlag = delFlag;
-    }
-
-    public Long getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(Long tenantId) {
-        this.tenantId = tenantId;
-    }
 
     public void initDefault() {
         if (this.getCompanyName() == null) {

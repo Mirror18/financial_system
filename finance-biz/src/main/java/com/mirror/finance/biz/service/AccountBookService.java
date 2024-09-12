@@ -6,6 +6,9 @@ import com.mirror.finance.biz.dto.vo.GetAccountBookVo;
 import com.mirror.finance.biz.dto.vo.ListAccountBookVo;
 import com.mirror.mybatis.help.PageInfo;
 
+/**
+ * @author mirror
+ */
 public interface AccountBookService {
     /**
      * 查询账套明细

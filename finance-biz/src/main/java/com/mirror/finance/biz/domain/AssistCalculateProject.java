@@ -1,5 +1,8 @@
 package com.mirror.finance.biz.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -7,6 +10,8 @@ import java.util.Date;
  *
  * @author mirror
  */
+@Setter
+@Getter
 public class AssistCalculateProject {
     /**
      * 
@@ -77,118 +82,6 @@ public class AssistCalculateProject {
      * 辅助核算id
      */
     private Long assistCalculateSummaryId;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getResponsibleDepartment() {
-        return responsibleDepartment;
-    }
-
-    public void setResponsibleDepartment(String responsibleDepartment) {
-        this.responsibleDepartment = responsibleDepartment;
-    }
-
-    public String getResponsiblePerson() {
-        return responsiblePerson;
-    }
-
-    public void setResponsiblePerson(String responsiblePerson) {
-        this.responsiblePerson = responsiblePerson;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public Boolean getDisable() {
-        return disable;
-    }
-
-    public void setDisable(Boolean disable) {
-        this.disable = disable;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Long getUpdateMemberId() {
-        return updateMemberId;
-    }
-
-    public void setUpdateMemberId(Long updateMemberId) {
-        this.updateMemberId = updateMemberId;
-    }
-
-    public Boolean getDelFlag() {
-        return delFlag;
-    }
-
-    public void setDelFlag(Boolean delFlag) {
-        this.delFlag = delFlag;
-    }
-
-    public Long getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(Long tenantId) {
-        this.tenantId = tenantId;
-    }
-
-    public Long getAssistCalculateSummaryId() {
-        return assistCalculateSummaryId;
-    }
-
-    public void setAssistCalculateSummaryId(Long assistCalculateSummaryId) {
-        this.assistCalculateSummaryId = assistCalculateSummaryId;
-    }
 
     public void initDefault() {
         if (this.getResponsibleDepartment() == null) {

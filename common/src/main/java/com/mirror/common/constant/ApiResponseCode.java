@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
+ * 定义的常量
+ * 常量用枚举类
  * @author mirror
  */
 
@@ -47,9 +49,9 @@ public enum ApiResponseCode {
      */
     SERVICE_ERROR(500, "service_error");
 
-    private Integer code;
+    private final Integer code;
 
-    private String message;
+    private final String message;
 
 //    private ApiResponseCode(Integer code, String message) {
 //        this.code = code;

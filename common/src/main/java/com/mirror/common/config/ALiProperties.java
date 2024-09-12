@@ -7,15 +7,21 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
+/**
+ * 用属性代替访问资源，也就是创造一个bean，
+ * @author mirror
+ */
+//配置注解
 @Configuration
+//要导入的根名称，代替了@value即，从这里导入资源
 @ConfigurationProperties(prefix = "ali")
 @Data
 public class ALiProperties {
-
+    //这里这些字段都是照应，application-local.yml中ali的设置
     private String accessKeyId;
 
     private String accessKeySecret;
-
+    //因为这一块是用类表明的
     private ALiSmsConfig sms;
 
     @Data

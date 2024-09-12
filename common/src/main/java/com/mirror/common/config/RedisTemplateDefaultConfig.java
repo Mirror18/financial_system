@@ -17,7 +17,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * Redis Template 配置
- **/
+ *
+ * @author mirror*/
 @ConditionalOnProperty(prefix = "sys",name = "redis-template-config",havingValue = "true")
 @Configuration
 @Slf4j
